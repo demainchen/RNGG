@@ -1,0 +1,5 @@
+import numpy as np
+def process(structure_emb,cutoff):
+    structure_emb=np.where(structure_emb<=cutoff,1,0)
+    distance_map = structure_emb + structure_emb.T + np.eye(len(structure_emb))
+    return distance_map
